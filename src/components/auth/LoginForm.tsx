@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema, type LoginInput } from "@schemas/auth.schema";
 import { toast } from "react-toastify";
-import styles from "@css/Auth.module.scss";
+import styles from "@css/Form.module.scss";
 import { useAuth } from "contexts/AuthContext";
 
 export const LoginForm = () => {

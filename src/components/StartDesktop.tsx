@@ -1,7 +1,10 @@
+import styles from '@css/StartDesktop.module.scss'
+import { AuthBlock } from "./auth/AuthBlock";
+
 export const StartDesktop = () => {
     return (
-        <div>
-            Startdesktop
+        <div className={styles.mainContainer}>
+            <AuthBlock/>
         </div>
     )
 }

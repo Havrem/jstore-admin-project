@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema, type RegisterInput } from "@schemas/auth.schema";
-import styles from "@css/Auth.module.scss";
+import styles from "@css/Form.module.scss";
 import { useAuth } from "contexts/AuthContext";
 import { toast } from "react-toastify";
 
