@@ -15,9 +15,9 @@ export const OrderBlock = () => {
   return (
     <div className={styles.mainContainer}>
         <h1>Manage Orders</h1>
-      {orders.map((o) => (
+        {orders.map((o) => (
         <OrderCard key={o.id} {...o} />
-      ))}
+        ))}
     </div>
   )
 }
