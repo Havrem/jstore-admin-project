@@ -6,7 +6,7 @@ import { useAuth } from "contexts/AuthContext";
 import { toast } from "react-toastify";
 
 export const RegisterForm = () => {
-  const { register, handleSubmit, formState: { errors } } =
+  const { register, handleSubmit, formState: { errors, isSubmitting } } =
     useForm<RegisterInput>({ resolver: zodResolver(registerSchema) });
 
   const { register: registerUser } = useAuth();
@@ -33,6 +33,10 @@ export const RegisterForm = () => {
         <input type="password" {...register("password")} placeholder="Create a password..." />
       </label>
       {errors.password && <p>{errors.password.message}</p>}
+
+      <button type="submit" disabled={isSubmitting} className={styles.confirmBtn}>
+        Create account
+      </button>
     </form>
   );
 };

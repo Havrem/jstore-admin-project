@@ -6,7 +6,7 @@ export const register = async (req: RegisterInput): Promise<void> => {
 }
 
 export const login = async (body: LoginInput): Promise<void>=> {
-  await api.post("/api/auth/login-user", body)
+  await api.post("/api/auth/login-admin", body)
 }
 
 export const logout = async (): Promise<void> => {

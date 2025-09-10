@@ -4,10 +4,12 @@ import { loginSchema, type LoginInput } from "@schemas/auth.schema";
 import { toast } from "react-toastify";
 import styles from "@css/Form.module.scss";
 import { useAuth } from "contexts/AuthContext";
+import { useNavigate } from "@tanstack/react-router";
 
 export const LoginForm = () => {
   const { register, handleSubmit, formState: { errors, isSubmitting } } =
     useForm<LoginInput>({ resolver: zodResolver(loginSchema) });
+    const navigate = useNavigate();
 
   const { login } = useAuth();
 
@@ -15,6 +17,7 @@ export const LoginForm = () => {
     try {
       await login(input);
       toast.success("Logged in!")
+      navigate({to: "/dashboard"})
     } catch {
       toast.error("Login failed. Please check your credentials.");
     }
