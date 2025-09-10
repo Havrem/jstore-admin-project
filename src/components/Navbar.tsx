@@ -1,6 +1,5 @@
 import styles from "@css/Navbar.module.scss"
-import { Link, useNavigate } from "@tanstack/react-router"
-import { useEffect, useState } from "react";
+import { useNavigate } from "@tanstack/react-router"
 import { useAuth } from "contexts/AuthContext";
 import { toast } from "react-toastify";
 
