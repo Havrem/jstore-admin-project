@@ -28,7 +28,7 @@ export const OrderCard = (order: OrderDTO) => {
         {order.orderItemDTOS.map((item, idx) => (
           <div key={idx} className={styles.field}>
             <p>Product name: {item.productDTO.title}</p>
-            <p>Quantity: {item.quantity}</p>
+            <p className={styles.qty}>Quantity: {item.quantity}</p>
           </div>
         ))}
       </div>
