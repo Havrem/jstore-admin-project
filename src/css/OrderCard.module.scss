@@ -1,10 +1,24 @@
 .mainContainer{
-    border: 2px solid #ff0000;
+    border: 2px solid #0b0b0b;
     text-align: left;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     padding: 0.5rem;
+    background-color: rgb(232, 250, 244);
+
+    button {
+        all: unset;
+        cursor: pointer;
+        background-color: rgb(253, 161, 161);
+        text-align: center;
+        padding: 1rem;
+        margin-left: auto;
+
+        &:hover {
+            background-color: rgb(242, 246, 242);
+        }
+    }
 }
 
 .top {
@@ -12,6 +26,7 @@
     display: flex;
     padding: 0.5rem;
     gap: 0.5rem;
+    // border: 1px solid blue;
 }
 
 .bottom {
@@ -25,6 +40,7 @@
 .field {
     display: flex;
     gap: 0.5rem;
+    border: 1px solid rgb(147, 147, 67);
 }
 
 .top p, 
