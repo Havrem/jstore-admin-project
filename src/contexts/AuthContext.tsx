@@ -2,7 +2,7 @@ import { register as apiRegister, login as apiLogin, logout as apiLogout } from 
 import type { LoginInput, RegisterInput } from "@schemas/auth.schema"
 import { createContext, useContext, useState, type ReactNode } from "react"
 
-type AuthContextValue = {
+export type AuthContextValue = {
     isLoggedIn : boolean,
     register: (input: RegisterInput) => Promise<void>,
     login : (input: LoginInput) => Promise<void>,

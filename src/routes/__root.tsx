@@ -1,12 +1,17 @@
-import { createRootRoute, Outlet } from '@tanstack/react-router'
+import { Outlet, createRootRouteWithContext } from '@tanstack/react-router'
 import styles from '@css/Layout.module.scss'
 import { Navbar } from '@components/Navbar'
+import type { AuthContextValue } from 'contexts/AuthContext'
 
-const RootLayout = () => ( // Where you are supposed to put navbars, providers etc
+export type RouterCtx = { auth: AuthContextValue }
+
+const RootLayout = () => (
   <div className={styles.mainContainer}>
-    <Navbar/>
-    <Outlet/>
+    <Navbar />
+    <Outlet />
   </div>
 )
 
-export const Route = createRootRoute({ component: RootLayout })
+export const Route = createRootRouteWithContext<RouterCtx>()({
+  component: RootLayout,
+})

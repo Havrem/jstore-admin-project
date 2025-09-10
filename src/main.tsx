@@ -1,35 +1,45 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
 import ReactDOM from 'react-dom/client'
+import { StrictMode } from 'react'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
-import { ToastContainer } from 'react-toastify';
-
-// Import the generated route tree
 import { routeTree } from './routeTree.gen'
-import { AuthProvider } from 'contexts/AuthContext.tsx'
+import { AuthProvider, useAuth, type AuthContextValue } from 'contexts/AuthContext'
+import { ToastContainer } from 'react-toastify'
 
-// Create a new router instance
-const router = createRouter({ routeTree })
+const router = createRouter({
+  routeTree,
+  context: {
+    auth: {
+      isLoggedIn: false,
+      register: async () => {},
+      login: async () => {},
+      logout: async () => {},
+    } as AuthContextValue,
+  },
+})
 
-// Register the router instance for type safety
 declare module '@tanstack/react-router' {
   interface Register {
     router: typeof router
   }
 }
 
-// Render the app
-const rootElement = document.getElementById('root')!
-if (!rootElement.innerHTML) {
-  const root = ReactDOM.createRoot(rootElement)
-  root.render(
-    <StrictMode>
-        <AuthProvider>
-          <RouterProvider router={router} />
-          <ToastContainer/>
-        </AuthProvider>
-    </StrictMode>,
-  )
+function AppRouter() {
+  const auth = useAuth();
+  return (
+    <RouterProvider
+      router={router}
+      context={{ auth }}
+      key={String(auth.isLoggedIn)}   // <- forces guards to see fresh auth
+    />
+  );
 }
+
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <AuthProvider>
+      <AppRouter />
+      <ToastContainer />
+    </AuthProvider>
+  </StrictMode>
+)

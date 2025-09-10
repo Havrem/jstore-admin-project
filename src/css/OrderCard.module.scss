@@ -1,0 +1,39 @@
+.mainContainer{
+    border: 2px solid #ff0000;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.top {
+    border-bottom: 1px solid rgb(2, 2, 2);
+    display: flex;
+    padding: 0.5rem;
+    gap: 0.5rem;
+}
+
+.bottom {
+    // border: 1px solid purple;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.field {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.top p, 
+.field p {
+  padding: 0 8px;
+  border-left: 1px solid black;
+}
+
+.top p:first-child,
+.field p:first-child {
+  border-left: none;
+}
