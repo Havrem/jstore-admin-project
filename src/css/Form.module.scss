@@ -1,0 +1,29 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    .field {
+        background-color: rgb(206, 252, 206);
+        padding: 0.3rem;
+        display: flex;
+        gap: 0.2rem;
+
+        > input {
+            border: none;
+            padding: 0.2rem;
+            flex: 1;
+        }
+    }
+
+    .confirmBtn {
+        all: unset;
+        cursor: pointer;
+        background-color: rgb(206, 252, 206);
+        text-align: center;
+
+        &:hover {
+            background-color: rgb(242, 246, 242);
+        }
+    }
+}

@@ -1,3 +1,19 @@
 .mainContainer {
-    border: 1px solid blue;
+    // border: 1px solid blue;
+    text-align: center;
+    border: 0.1rem solid rgb(0, 0, 0);
+    background-color: rgb(248, 253, 249);
+    padding: 1rem;
+    width: 60vw;
+
+    .modeBtn {
+        all: unset;
+        cursor: pointer;
+        // background-color: rgb(216, 228, 216);
+        text-align: center;
+
+        &:hover {
+            color: rgb(142, 140, 140);
+        }
+    }
 }
