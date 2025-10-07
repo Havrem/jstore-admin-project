@@ -4,7 +4,7 @@ import { loginSchema, type LoginInput } from "@schemas/auth.schema";
 import { toast } from "react-toastify";
 import styles from "@css/Form.module.scss";
 import { useAuth } from "contexts/AuthContext";
-import { useLocation, useNavigate } from '@tanstack/react-router'
+import { useNavigate } from '@tanstack/react-router'
 
 export const LoginForm = () => {
   const { register, handleSubmit, formState: { errors, isSubmitting } } =
