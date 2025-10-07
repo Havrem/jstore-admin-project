@@ -11,9 +11,6 @@ export const LoginForm = () => {
     useForm<LoginInput>({ resolver: zodResolver(loginSchema) });
     const navigate = useNavigate();
 
-  const { search } = useLocation()
-  const redirect = (search as { redirect?: string }).redirect
-
   const { login } = useAuth();
 
   const onSubmit = async (input: LoginInput) => {
